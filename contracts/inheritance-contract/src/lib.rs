@@ -4059,7 +4059,6 @@ impl InheritanceContract {
         Ok((success, fail))
     }
 }
-
 #[cfg(test)]
 #[allow(clippy::duplicated_attributes)]
 mod message_test;
