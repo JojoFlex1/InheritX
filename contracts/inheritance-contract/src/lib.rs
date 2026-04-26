@@ -155,6 +155,9 @@ pub enum DataKey {
     WitnessSignature(u64, Address),   // (plan_id, witness) -> u64 (signed_at)
     LendingContract,
     GovernanceContract,
+    FreezePlan(u64),             // plan_id -> FreezeRecord
+    LegalHold(u64),              // plan_id -> LegalHold
+    FrozenBeneficiary(u64, u32), // (plan_id, index) -> bool
 }
 
 #[contracttype]
