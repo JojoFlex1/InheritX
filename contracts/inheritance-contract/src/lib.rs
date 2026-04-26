@@ -1,4 +1,5 @@
 #![no_std]
+
 use soroban_sdk::{
     contract, contracterror, contractimpl, contracttype, log, symbol_short, token, vec, Address,
     Bytes, BytesN, Env, FromVal, IntoVal, InvokeError, String, Symbol, Val, Vec,
@@ -3724,7 +3725,7 @@ impl InheritanceContract {
                 i += 1;
             }
         }
-        let fail = (indices.len() as u32).saturating_sub(sorted.len());
+        let fail = indices.len().saturating_sub(sorted.len());
         let mut success: u32 = 0;
         for idx in sorted.iter() {
             if idx >= plan.beneficiaries.len() {
@@ -4030,7 +4031,7 @@ impl InheritanceContract {
                     continue;
                 }
             }
-            let available = current_plan
+            let _available = current_plan
                 .total_amount
                 .saturating_sub(current_plan.total_loaned);
             let claim = ClaimRecord {
